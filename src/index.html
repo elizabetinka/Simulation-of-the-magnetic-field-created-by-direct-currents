@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моделирование магнитного поля, создаваемого прямыми токами</title>
+    <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-indigo-50">
+    <header class="text-center">
+        <br\>
+        <h1 class=" my-10 font-mono text-2xl font-bold text-indigo-800">Моделирование магнитного поля, создаваемого прямыми токами</h1>
+    </header>
+    <div class="split left">
+        <div class="text-center">
+          <input id="amper" class="btn" type="button" value="Добавить источник тока" />
+          <input  id="clear" class="btn text-center" type="button" value="Очистить" />
+          <input  id="result" class="btn" type="button" value="Результат" />
+        </div>
+        <br\>
+        <div class="my-10 val text-center">
+          <label class="hidden text-lg font-bold text-indigo-800" for="i" id="valueL">Величина:</label>
+        <input class="hidden object-left" type="text" id="value" name="name" required minlength="1" maxlength="8" size="10" />
+        </div>
+        <div class="my-10 text-center">
+          <input  id="del" class="hidden btn text-center" type="button" value="Удалить" />
+        </div>
+      </div>
+      <div class="split right">
+        <!-- <div class="myCanvas" id="canvas">
+            Извините, ваш браузер нет поддерживает&lt;canvas&gt; элемент.
+            <div id = "1a" class="circle"></div>
+        </div> -->
+
+         <canvas class="myCanvas" id="canvas" width= "600" height="500">
+            Извините, ваш браузер нет поддерживает&lt;canvas&gt; элемент.
+            <div id = "1a" class="circle"></div>
+        </canvas> 
+      </div>
+      <footer class="footer text-lg font-mono font-bold text-indigo-800">
+        <a href="https://t.me/Indo_evri_momint" target="_blank">Ссылка на telegram</a>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
