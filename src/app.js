@@ -142,11 +142,11 @@ resultButton.onclick = function(){
         for(var curY=0; curY<500; curY+=50) {
             let res_vec = new Vector(new Point(curX,curY),new Point(curX,curY),0);
             for(var i=circles.length-1; i>=0; i--) {
-                r = Math.sqrt(Math.pow(curX-circles[i].x,2)+Math.pow(curY-circles[i].y,2));
+                let r = Math.sqrt(Math.pow(curX-circles[i].x,2)+Math.pow(curY-circles[i].y,2));
                 if (r < circles[i].radius) {
                     continue;
                 }
-                vec = GetB(curX,curY,circles[i]);
+                let vec = GetB(curX,curY,circles[i]);
                 if (vec !=null){
                     res_vec = SumVector(res_vec,vec)
                 }
