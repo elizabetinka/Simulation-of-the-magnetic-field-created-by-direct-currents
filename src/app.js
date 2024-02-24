@@ -65,14 +65,14 @@ function GetB(x,y,circle) {
     }
     modul = Math.pow(10,-7)*Math.abs(circle.q)/Math.pow(r,2);
     console.log(modul);
-    let mnozh = Math.pow(10,10);
+    let mnozh = Math.pow(11,9);
     if (circle.q>0){
         let B =(x-circle.x)*modul*mnozh;
-        B= Math.min(B,50);
-        B= Math.max(B,-50);
+        B= Math.min(B,45);
+        B= Math.max(B,-45);
         let A =  -(circle.y-y)*modul*mnozh;
-        A= Math.min(A,50);
-        A= Math.max(A,-50);
+        A= Math.min(A,45);
+        A= Math.max(A,-45);
         console.log("A ",A,"B ",B);
         return new Vector(new Point(x,y), new Point(x+A,y-B), modul);
     }
@@ -103,6 +103,9 @@ function DrawVector(vector) {
     }
     */
     console.log(len);
+    if (len <=0){
+        return;
+    }
     var PI=Math.PI;
     var headLength = 5;
   var degreesInRadians225=225*PI/180;
@@ -138,13 +141,14 @@ resultButton.onclick = function(){
     if (circles.length == 0){
         return;
     }
-    for(var curX=0; curX<600; curX+=50) {
-        for(var curY=0; curY<500; curY+=50) {
+    for(var curX=0; curX<600; curX+=45) {
+        for(var curY=0; curY<500; curY+=45) {
             let res_vec = new Vector(new Point(curX,curY),new Point(curX,curY),0);
             for(var i=circles.length-1; i>=0; i--) {
                 let r = Math.sqrt(Math.pow(curX-circles[i].x,2)+Math.pow(curY-circles[i].y,2));
                 if (r < circles[i].radius) {
-                    continue;
+                    res_vec = new Vector(new Point(curX,curY),new Point(curX,curY),0);
+                    break;
                 }
                 let vec = GetB(curX,curY,circles[i]);
                 if (vec !=null){
