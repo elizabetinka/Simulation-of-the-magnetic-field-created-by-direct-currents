@@ -15,7 +15,7 @@ let resultButton = document.getElementById('result');
 let mu = 4*Math.PI*Math.pow(10,-7);
 
 const availableScreenWidth = window.screen.availWidth
-console.log(availableScreenWidth )
+console.log("Ширина", availableScreenWidth )
 const availableScreenHeight = window.screen.availHeight
 
 class Point{
