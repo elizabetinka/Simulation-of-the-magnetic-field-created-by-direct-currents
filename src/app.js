@@ -187,7 +187,7 @@ inputValue.onkeydown= function (e){
 canvas.onclick = function (e){
     // Получаем координаты точки холста, в которой щелкнули
   var clickX = e.pageX - canvas.offsetLeft - availableScreenWidth*40/100;
-  var clickY = e.pageY - canvas.offsetTop;
+  var clickY = e.pageY - canvas.offsetTop-114;
   console.log(canvas.offsetLeft);
   console.log(canvas.offsetTop);
   console.log(clickX);
