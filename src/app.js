@@ -15,8 +15,10 @@ let resultButton = document.getElementById('result');
 let mu = 4*Math.PI*Math.pow(10,-7);
 
 const availableScreenWidth = window.screen.availWidth
-console.log("Ширина", availableScreenWidth )
 const availableScreenHeight = window.screen.availHeight
+console.log("Ширина", availableScreenWidth )
+console.log("Длина", availableScreenHeight )
+
 
 class Point{
     constructor(x, y) {
@@ -184,8 +186,8 @@ inputValue.onkeydown= function (e){
 }
 canvas.onclick = function (e){
     // Получаем координаты точки холста, в которой щелкнули
-  var clickX = e.pageX - canvas.offsetLeft - 577;
-  var clickY = e.pageY - canvas.offsetTop - 114;
+  var clickX = e.pageX - canvas.offsetLeft - availableScreenWidth*40/100;
+  var clickY = e.pageY - canvas.offsetTop;
   console.log(canvas.offsetLeft);
   console.log(canvas.offsetTop);
   console.log(clickX);
@@ -236,7 +238,7 @@ delButton.onclick = function () {
 canvas.onmousemove = function (e){
     if (previousSelectedCircle != null) {
         // Сохраняем позицию мыши
-        var x = e.pageX - canvas.offsetLeft - 577;
+        var x = e.pageX - canvas.offsetLeft - availableScreenWidth*40/100;
         var y = e.pageY - canvas.offsetTop - 114;
         if (x <0 || y<0){
             return;
